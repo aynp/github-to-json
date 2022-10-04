@@ -1,0 +1,19 @@
+{
+  "name": "github-to-json",
+  "version": "1.0.0",
+  "description": "Repository to JSON using GitHub API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aynp/github-to-json.git"
+  },
+  "author": "aynp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aynp/github-to-json/issues"
+  },
+  "homepage": "https://github.com/aynp/github-to-json#readme"
+}

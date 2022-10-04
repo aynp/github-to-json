@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Repository to JSON using GitHub API",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/aynp/github-to-json.git"
   },
-  "author": "aynp",
+  "author": {
+    "name": "Aryan Pathania",
+    "url": "https://aryanpathania.vercel.app"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aynp/github-to-json/issues"
   },
-  "homepage": "https://github.com/aynp/github-to-json#readme"
+  "homepage": "https://github.com/aynp/github-to-json#readme",
+  "dependencies": {
+    "meow": "^10.1.5"
+  }
 }

@@ -10,9 +10,9 @@ async function rec(octokit, url) {
     const item = data[i];
     if (item.type === 'dir') {
       const temp = await rec(octokit, item.url);
-      result.push({ name: item.name, children: temp });
+      result.push({ name: item, children: temp });
     } else {
-      result.push(item.name);
+      result.push(item);
     }
   }
 

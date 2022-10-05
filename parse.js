@@ -18,7 +18,7 @@ async function rec(octokit, url) {
   return result;
 }
 
-async function parseGH(input, { token }) {
+async function parseGH(input, { depth = Infinity, token }) {
   const [owner, repo, path = ''] = input;
   const url = `/repos/${owner}/${repo}/contents/${path}`;
 

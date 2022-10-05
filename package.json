@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/aynp/github-to-json#readme",
   "dependencies": {
+    "@octokit/core": "^4.0.5",
     "meow": "^10.1.5"
   }
 }

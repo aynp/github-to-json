@@ -1,11 +1,14 @@
 {
   "name": "github-to-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Repository to JSON using GitHub API",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "github-to-json": "./index.js"
   },
   "repository": {
     "type": "git",
@@ -23,5 +26,9 @@
   "dependencies": {
     "@octokit/core": "^4.0.5",
     "meow": "^10.1.5"
-  }
+  },
+  "keywords": [
+    "GitHub",
+    "JSON"
+  ]
 }

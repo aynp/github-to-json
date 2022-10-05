@@ -1,4 +1,5 @@
 import { Octokit } from '@octokit/core';
+import fs from 'fs';
 
 async function rec(octokit, url) {
   const result = [];
@@ -18,7 +19,7 @@ async function rec(octokit, url) {
   return result;
 }
 
-async function parseGH(input, { depth = Infinity, token }) {
+async function parseGH(input, { depth = Infinity, token, output }) {
   const [owner, repo, path = ''] = input;
   const url = `/repos/${owner}/${repo}/contents/${path}`;
 
@@ -27,7 +28,17 @@ async function parseGH(input, { depth = Infinity, token }) {
   });
 
   const result = await rec(octokit, url);
-  console.dir(result, { depth: null });
+
+  if (output) {
+    fs.writeFile(output, JSON.stringify(result), function (err) {
+      if (err) {
+        return console.log(err);
+      }
+      console.log(`File written to ${output}`);
+    });
+  } else {
+    console.dir(result, { depth: null });
+  }
 }
 
 export default parseGH;

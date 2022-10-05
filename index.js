@@ -5,7 +5,12 @@ import parseGH from './parse.js';
 
 const cli = meow(``, {
   importMeta: import.meta,
-  flags: {},
+  flags: {
+    token: {
+      type: 'string',
+      alias: 't',
+    },
+  },
 });
 
 parseGH(cli.input, cli.flags);

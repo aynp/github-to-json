@@ -18,11 +18,13 @@ async function rec(octokit, url) {
   return result;
 }
 
-async function parseGH(input, flags) {
+async function parseGH(input, { token }) {
   const [owner, repo, path = ''] = input;
   const url = `/repos/${owner}/${repo}/contents/${path}`;
 
-  const octokit = new Octokit({});
+  const octokit = new Octokit({
+    auth: token,
+  });
 
   const result = await rec(octokit, url);
   console.dir(result, { depth: null });

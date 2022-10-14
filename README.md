@@ -23,24 +23,22 @@ The structure of genrated JSON is similar to the response of api.github.com/repo
 
 ```json
 {
-  "name": {
-    "name": "name",
-    "path": "path",
-    "sha": "sha",
-    "size": 0,
-    "url": "dir_url",
-    "html_url": "html_url",
-    "git_url": "git_url",
-    "download_url": null,
-    "type": "dir",
-    "_links": {
-      "self": "self_url",
-      "git": "git_url",
-      "html": "html_url"
-    }
-  },
+  "name": "name",
+  "path": "path",
+  "sha": "sha",
+  "size": 0,
+  "url": "dir_url",
+  "html_url": "html_url",
+  "git_url": "git_url",
+  "download_url": null,
+  "type": "dir",
+  "_links": {
+    "self": "self_url",
+    "git": "git_url",
+    "html": "html_url"
+  }
   "contents": [
-    // contents of the directory
+    {}
   ]
 }
 ```

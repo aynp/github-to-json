@@ -1,6 +1,6 @@
 # GitHub to JSON
 
-Genrate JSON file of a repository structure from GitHub API.
+Genrate JSON file of a repository structure using GitHub API.
 
 ## Usage
 

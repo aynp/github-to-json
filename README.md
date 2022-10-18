@@ -2,6 +2,26 @@
 
 Genrate JSON file of a repository structure using GitHub API.
 
+## Installation
+
+- ### Using npm
+
+```bash
+npm install --global github-to-json
+```
+
+- ### Using yarn
+
+```bash
+yarn global add github-to-json
+```
+
+- ### Using pnpm
+
+```bash
+pnpm install --global github-to-json
+```
+
 ## Usage
 
 ```

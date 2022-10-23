@@ -1,15 +1,17 @@
 import { Octokit } from '@octokit/core';
 import fs from 'fs';
 
-async function rec(octokit, url) {
+async function rec(octokit, url, depth) {
   const result = [];
+
+  if (depth <= 0) return result;
 
   const data = (await octokit.request(`GET ${url}`, {})).data;
 
   for (let i = 0; i < data.length; i++) {
     const item = data[i];
     if (item.type === 'dir') {
-      const temp = await rec(octokit, item.url);
+      const temp = await rec(octokit, item.url, depth - 1);
       result.push({ ...item, contents: temp });
     } else {
       result.push(item);
@@ -27,7 +29,7 @@ async function parseGH(input, { depth = Infinity, token, output }) {
     auth: token,
   });
 
-  const result = await rec(octokit, url);
+  const result = await rec(octokit, url, depth);
 
   if (output) {
     fs.writeFile(output, JSON.stringify(result), function (err) {
